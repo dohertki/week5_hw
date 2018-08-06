@@ -1,0 +1,32 @@
+﻿<Window x:Class="week5_hw.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:week5_hw"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="636" Width="1079">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="259*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Height="108" Margin="655,70,-43,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"><Run Text="CS 373"/><LineBreak/><Run Text="Week 5 Homework "/></TextBlock>
+        <ListBox HorizontalAlignment="Left" Height="5" Margin="330,70,0,0" VerticalAlignment="Top" Width="5" Grid.Column="1"/>
+        <Button Content="Hello" HorizontalAlignment="Left" Height="20" Margin="170,30,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
+        <Button Content="Threads" HorizontalAlignment="Left" Margin="490,30,0,0" VerticalAlignment="Top" Width="75"   Click="thread_Click" Grid.Column="1"/>
+        <Button Content="Processes" HorizontalAlignment="Left" Margin="35,50,0,0" VerticalAlignment="Top" Width="75" Click="process_Click" Grid.Column="1"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="255" Margin="305,80,0,0" VerticalAlignment="Top" Width="305" SelectionChanged="ListView_SelectionChanged" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="PID" DisplayMemberBinding="{Binding Path=pPID}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Modules" HorizontalAlignment="Left" Margin="40,110,0,0" VerticalAlignment="Top" Width="75" Click="module_Click" Grid.Column="1"/>
+        <ListBox x:Name="list_Box_L" HorizontalAlignment="Left" Height="180" Margin="10,400,0,0" VerticalAlignment="Top" Width="480" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Column="1"/>
+        <ListBox x:Name="list_Box_R" HorizontalAlignment="Left" Height="180" Margin="520,400,0,0" VerticalAlignment="Top" Width="480" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Column="1"/>
+
+    </Grid>
+</Window>
